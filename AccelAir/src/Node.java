@@ -9,7 +9,7 @@ public class Node {
 
     private LinkedList<Node> shortestPath = new LinkedList<>();
 
-    private Double distance = Double.MAX_VALUE;
+    private Double time = Double.MAX_VALUE;
 
     private Map<Node, Double> adjacentNodes = new HashMap<>();
 
@@ -17,8 +17,8 @@ public class Node {
         this.name = name;
     }
 
-    public void addDestination(Node destination, double distance) {
-        adjacentNodes.put(destination, distance);
+    public void addDestination(Node destination, double time) {
+        adjacentNodes.put(destination, time);
     }
     
     public void removePath(Node destination) {
@@ -41,12 +41,12 @@ public class Node {
         this.adjacentNodes = adjacentNodes;
     }
 
-    public Double getDistance() {
-        return distance;
+    public Double getTime() {
+        return time;
     }
 
-    public void setDistance(Double distance) {
-        this.distance = distance;
+    public void setTime(Double time) {
+        this.time = time;
     }
 
     public List<Node> getShortestPath() {

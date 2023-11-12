@@ -109,8 +109,8 @@ public class Main {
 				Node sourceNode = InitializeRoutes.travelMap.findNode(cmbSource.getSelectedItem().toString());
 				InitializeRoutes.travelMap = Dijkstra.calculateShortestPathFromSource(InitializeRoutes.travelMap, sourceNode);
 				Node destinationNode = InitializeRoutes.travelMap.findNode(cmbDestination.getSelectedItem().toString());
-				int hours = (int) Math.floor(destinationNode.getDistance());
-				int minutes = (int) (Math.round((destinationNode.getDistance() - hours) * 60));
+				int hours = (int) Math.floor(destinationNode.getTime());
+				int minutes = (int) (Math.round((destinationNode.getTime() - hours) * 60));
 				if((hours > 0 && hours < Integer.MAX_VALUE) || minutes > 0) {
 					String path = "Path: ";
 					for(Node pathNode : destinationNode.getShortestPath()){
